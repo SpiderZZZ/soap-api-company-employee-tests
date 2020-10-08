@@ -1,6 +1,6 @@
 # soap-api-company-employee-tests
 
-Запускаем автоматизированные SOAP API тесты (предаврительно должен быть установлен maven последней версии http://maven.apache.org/download.cgi, в переменную окружения PATH должен быть добавлен путь до mvn.bat):
+Запускаем автоматизированные SOAP API тесты (предаврительно должен быть установлен maven последней версии http://maven.apache.org/download.cgi, в переменную окружения PATH должен быть добавлен путь до исполняемого файла mvn):
 
 * Если имеется лиценизия на ready-api https://smartbear.com/product/ready-api/overview/ (возможно временную) то переходим в директорию ready-api и запускаем mvn test
 * Если лиценизии на ready-api нет то переходим в директорию soap-ui и запускаем mvn test
