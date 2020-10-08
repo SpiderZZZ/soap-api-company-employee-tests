@@ -12,4 +12,4 @@
 http://joxi.ru/L21JL60hRkpwPA
 http://joxi.ru/GrqBMjLf4BjbNm
 
-Сами файлы с проектами CSSSR-Test-project-1-readyapi-project.xml  и CSSSR-Test-project-1-soapui-project.xml создавались в Ready-Api-2.8.2 и SOAP-UI версии 5.5.0. Соответственно рекомендуется открывать и анализировать их содержимое именно в этих версиях.
+Сами файлы с проектами CSSSR-Test-project-1-readyapi-project.xml  и CSSSR-Test-project-1-soapui-project.xml создавались в Ready-Api версии 2.8.2 и SOAP-UI версии 5.5.0. Соответственно рекомендуется открывать и анализировать их содержимое именно в этих версиях.
