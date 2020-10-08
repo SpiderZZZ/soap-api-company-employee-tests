@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="25be6f5a-7ddc-4bb8-87fd-870e665a8ebc" created="2.8.2" activeEnvironment="Default" name="CSSSR Test project 1" resourceRoot="" updated="2.8.2 2019-08-27T17:04:01Z" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value="XML"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="JUnit-Style report for automation"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="SmokeCompanyEmployeeTestSuite"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Test Case" value="&lt;all>"/>
+  <con:entry key="Slack Access Token" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files\SmartBear\ReadyAPI-2.8.2\bin"/>
+  <con:entry key="Environment" value="Default environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="${WORKSPACE}"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+  </con:settings>
+  <con:interface xsi:type="con:WsdlInterface" id="9b688495-e0b4-487e-b603-53d3e76df0dc" wsaVersion="NONE" name="CompanyResourceBinding" type="wsdl" bindingName="{http://csssr.com/definitions}CompanyResourceBinding" soapVersion="1_1" anonymous="optional" definition="https://soap.qa-test.csssr.com/ws/soap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="https://soap.qa-test.csssr.com/ws/soap.wsdl">
+      <con:part>
+        <con:url>https://soap.qa-test.csssr.com/ws/soap.wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://csssr.com/definitions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:schema="http://csssr.com/schemas" xmlns:tns="http://csssr.com/definitions">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://csssr.com/schemas" schemaLocation="testSchema.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddCompanyRequest">
+    <wsdl:part name="AddCompanyRequest" element="schema:AddCompanyRequest"/>
+  </wsdl:message>
+  <wsdl:message name="AddCompanyResponse">
+    <wsdl:part name="AddCompanyResponse" element="schema:AddCompanyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompanyRequest">
+    <wsdl:part name="GetCompanyRequest" element="schema:GetCompanyRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompanyResponse">
+    <wsdl:part name="GetCompanyResponse" element="schema:GetCompanyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeRequest">
+    <wsdl:part name="AddEmployeeRequest" element="schema:AddEmployeeRequest"/>
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeResponse">
+    <wsdl:part name="AddEmployeeResponse" element="schema:AddEmployeeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEmployeesToCompanyRequest">
+    <wsdl:part name="AddEmployeesToCompanyRequest" element="schema:AddEmployeesToCompanyRequest"/>
+  </wsdl:message>
+  <wsdl:message name="AddEmployeesToCompanyResponse">
+    <wsdl:part name="AddEmployeesToCompanyResponse" element="schema:AddEmployeesToCompanyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeRequest">
+    <wsdl:part name="UpdateEmployeeRequest" element="schema:UpdateEmployeeRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeResponse">
+    <wsdl:part name="UploadEmployeeResponse" element="schema:UpdateEmployeeResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CompanyResource">
+    <wsdl:operation name="AddCompany">
+      <wsdl:input message="tns:AddCompanyRequest" name="AddCompanyRequest"/>
+      <wsdl:output message="tns:AddCompanyResponse" name="AddCompanyResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <wsdl:input message="tns:GetCompanyRequest" name="GetCompanyRequest"/>
+      <wsdl:output message="tns:GetCompanyResponse" name="GetCompanyResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input message="tns:AddEmployeeRequest" name="AddEmployeeRequest"/>
+      <wsdl:output message="tns:AddEmployeeResponse" name="AddEmployeeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeesToCompany">
+      <wsdl:input message="tns:AddEmployeesToCompanyRequest" name="AddEmployeesToCompanyRequest"/>
+      <wsdl:output message="tns:AddEmployeesToCompanyResponse" name="AddEmployeesToCompanyResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input message="tns:UpdateEmployeeRequest" name="UpdateEmployeeRequest"/>
+      <wsdl:output message="tns:UpdateEmployeeResponse" name="UpdateEmployeeResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CompanyResourceBinding" type="tns:CompanyResource">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddCompany">
+      <wsdl:input name="AddCompanyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <wsdl:input name="GetCompanyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input name="AddEmployeeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeesToCompany">
+      <wsdl:input name="AddEmployeesToCompanyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input name="UpdateEmployeeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompanyResourceService">
+    <wsdl:port name="CompanyResourcePort" binding="tns:CompanyResourceBinding">
+      <soap:address location="https://soap.qa-test.csssr.com/ws/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+      <con:part>
+        <con:url>https://soap.qa-test.csssr.com/ws/testSchema.xsd</con:url>
+        <con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://csssr.com/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:csssr="http://csssr.com/schemas">
+  <xs:element name="AddCompanyRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Company" type="csssr:CompanyType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CompanyId" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Company" type="csssr:CompanyType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FirstName" type="xs:string"/>
+        <xs:element name="LastName" type="xs:string"/>
+        <xs:element minOccurs="0" name="MiddleName" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Employee" type="csssr:EmployeeType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeesToCompanyRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CompanyId" type="csssr:EntityId"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="EmployeeId" type="csssr:EntityId"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeesToCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Company" type="csssr:CompanyType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Id" type="csssr:EntityId"/>
+        <xs:element name="FirstName" type="xs:string"/>
+        <xs:element name="LastName" type="xs:string"/>
+        <xs:element minOccurs="0" name="MiddleName" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Employee" type="csssr:EmployeeType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EmployeeType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string"/>
+      <xs:element name="CreatedAt" type="xs:dateTime"/>
+      <xs:element name="UpdatedAt" type="xs:dateTime"/>
+      <xs:element name="FirstName" type="xs:string"/>
+      <xs:element name="LastName" type="xs:string"/>
+      <xs:element name="MiddleName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompanyType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string"/>
+      <xs:element name="CreatedAt" type="xs:dateTime"/>
+      <xs:element name="UpdatedAt" type="xs:dateTime"/>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="employees" type="csssr:EmployeeType"/>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EntityId">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+    </con:endpoints>
+    <con:operation id="f82e1830-677e-435b-b57c-f80d5185907b" isOneWay="false" action="" name="AddCompany" bindingOperationName="AddCompany" type="Request-Response" inputName="AddCompanyRequest" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="8f34767e-544c-41c3-bd59-1aa6fa86d96a" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:AddCompanyRequest>\r
+         <sch:Name>?</sch:Name>\r
+      </sch:AddCompanyRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://csssr.com/definitions/CompanyResource/AddCompanyRequest"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="fe85c8ac-ba69-4fca-b91e-0c24d146462a" isOneWay="false" action="" name="AddEmployee" bindingOperationName="AddEmployee" type="Request-Response" inputName="AddEmployeeRequest" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="f8a7451c-ff52-4a73-ad11-3f30caeda46c" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:AddEmployeeRequest>\r
+         <sch:FirstName>?</sch:FirstName>\r
+         <sch:LastName>?</sch:LastName>\r
+         <!--Optional:-->\r
+         <sch:MiddleName>?</sch:MiddleName>\r
+      </sch:AddEmployeeRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://csssr.com/definitions/CompanyResource/AddEmployeeRequest"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="00ca7aad-8089-44bc-b82d-ffbb8b5183c2" isOneWay="false" action="" name="AddEmployeesToCompany" bindingOperationName="AddEmployeesToCompany" type="Request-Response" inputName="AddEmployeesToCompanyRequest" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="15fe486f-4480-4d80-8b2f-0dfb66999d57" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:AddEmployeesToCompanyRequest>\r
+         <sch:CompanyId>?</sch:CompanyId>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:EmployeeId>?</sch:EmployeeId>\r
+      </sch:AddEmployeesToCompanyRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://csssr.com/definitions/CompanyResource/AddEmployeesToCompanyRequest"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="73d241d5-e1b5-4a8c-86c2-f5eb992c7670" isOneWay="false" action="" name="GetCompany" bindingOperationName="GetCompany" type="Request-Response" inputName="GetCompanyRequest" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="69dc74ad-d116-44c9-88f5-31f7cad44f48" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:GetCompanyRequest>\r
+         <sch:CompanyId>?</sch:CompanyId>\r
+      </sch:GetCompanyRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://csssr.com/definitions/CompanyResource/GetCompanyRequest"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="1e67fa5b-72ef-4253-b18e-03b43453f909" isOneWay="false" action="" name="UpdateEmployee" bindingOperationName="UpdateEmployee" type="Request-Response" inputName="UpdateEmployeeRequest" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="e860b52f-ecce-4ce8-88af-1a320d4034c3" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:UpdateEmployeeRequest>\r
+         <sch:Id>?</sch:Id>\r
+         <sch:FirstName>?</sch:FirstName>\r
+         <sch:LastName>?</sch:LastName>\r
+         <!--Optional:-->\r
+         <sch:MiddleName>?</sch:MiddleName>\r
+      </sch:UpdateEmployeeRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://csssr.com/definitions/CompanyResource/UpdateEmployeeRequest"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="55b87481-c54b-440d-af42-7490f75d991c" name="CompanyResourceBinding TestSuite">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="c0cf9886-4f69-4e40-8431-78a78ed5321a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AddCompany TestCase" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="e0739f1f-bfbb-4a77-b15a-602a809e27ec" name="AddCompany">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>AddCompany</con:operation>
+          <con:request name="AddCompany" id="d1e356eb-a9ae-4f29-9222-bab60bd29bda">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:AddCompanyRequest>
+         <sch:Name>${CompanyName}</sch:Name>
+      </sch:AddCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="Valid HTTP Status Codes" id="8e7274f0-6bbc-4ead-b28e-335de787d448" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Response" id="8c098e5a-482b-4156-8fa1-9f67be819122" name="SOAP Response"/>
+            <con:assertion type="XPath Match" id="f8ad9321-cdde-426f-aeb7-8e4c7f624841" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddCompanyResponse[1]/ns2:Company[1]/ns2:Name[1]</path>
+                <content>${CompanyName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="dfe59e05-3772-41d7-981b-19c269817b84" name="Contains">
+              <con:configuration>
+                <token>CreatedAt</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="71b12a01-d000-45f2-b3a6-b799551a344b" name="Contains 1">
+              <con:configuration>
+                <token>UpdatedAt</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="71b12a01-d000-45f2-b3a6-b799551a344b" name="Contains 2">
+              <con:configuration>
+                <token>Id</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/AddCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:setupScript>import org.apache.commons.lang.RandomStringUtils 
+charset = (('а'..'я') + ('А'..'Я') + ('0'..'9')).join()
+length = 9
+context.CompanyName=RandomStringUtils.random(length, charset.toCharArray())</con:setupScript>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>67fa66da-7d64-4a8a-9cf1-703f6f1c044b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>e0739f1f-bfbb-4a77-b15a-602a809e27ec</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>19e46e9e-ba30-403e-9eda-5fe2ded5af30</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="178b0047-7286-4d8e-bb7e-c4407b729977" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AddEmployee TestCase" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="4546ad99-7df5-42c5-a9fb-09a2e243d8c3" name="AddEmployee">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>AddEmployee</con:operation>
+          <con:request name="AddEmployee" id="dd110041-cde5-4c72-993c-9fb33e6e525f">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Body>
+      <sch:AddEmployeeRequest>
+         <sch:LastName>${LastName}</sch:LastName>
+         <sch:FirstName>${FirstName}</sch:FirstName>
+         <sch:MiddleName>${MiddleName}</sch:MiddleName>
+      </sch:AddEmployeeRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="4edb2320-f0fe-4d00-860c-c04eb119da67" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="911ca8a3-8539-451e-9c63-dbfb6fb1b772" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="d342e713-5589-4ee2-bdbc-99ecd39c3ae5" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:FirstName[1]</path>
+                <content>${FirstName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="37433be0-1d3f-4498-a8ad-f07cdfc879be" name="XPath Match 2">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:LastName[1]</path>
+                <content>${LastName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="9d02e513-5cb2-4b83-816a-026c152343cb" name="XPath Match 3">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:MiddleName[1]</path>
+                <content>${MiddleName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="86e1ca51-0c17-4ca4-af1d-01ab0253a96a" name="Contains">
+              <con:configuration>
+                <token>Id</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="d4198246-52fd-4c82-8096-da7ffdc7a52f" name="CreatedAt">
+              <con:configuration>
+                <token>CreatedAt</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="d4198246-52fd-4c82-8096-da7ffdc7a52f" name="UpdatedAt">
+              <con:configuration>
+                <token>UpdatedAt</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/AddEmployeeRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:setupScript>import org.apache.commons.lang.RandomStringUtils 
+charset = (('а'..'я') + ('А'..'Я') + ('0'..'9')).join()
+length = 9
+context.FirstName = RandomStringUtils.random(length, charset.toCharArray())
+context.MiddleName = RandomStringUtils.random(length, charset.toCharArray())
+context.LastName = RandomStringUtils.random(length, charset.toCharArray())</con:setupScript>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>1e2ec538-c062-4fb6-9dde-b50ade4839fa</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="b0eb8742-5729-4758-9de1-1c34861f91af" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AddEmployeesToCompany TestCase" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="634eb359-a56c-44d6-a342-193e8d5c5059" name="AddEmployeesToCompany">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>AddEmployeesToCompany</con:operation>
+          <con:request name="AddEmployeesToCompany" id="c3f25b4b-349d-4f5a-9a62-63c3678b53cb">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:AddEmployeesToCompanyRequest>
+         <sch:CompanyId>${CompanyId}</sch:CompanyId>
+         <sch:EmployeeId>${Employee1Id}</sch:EmployeeId>
+         <sch:EmployeeId>${Employee2Id}</sch:EmployeeId>
+         <sch:EmployeeId>${Employee3Id}</sch:EmployeeId>
+         <sch:EmployeeId>${Employee4Id}</sch:EmployeeId>
+      </sch:AddEmployeesToCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="b4c3a139-6d8d-4e88-8cbe-ad346accdb14" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="242b41c7-9a49-4b90-b615-e363f33f46ca" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="21d009f7-e66a-4905-b61a-2129ff2feb2a" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeesToCompanyResponse[1]/ns2:Company[1]/ns2:Id[1]</path>
+                <content>${CompanyId}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="a7964a38-fb70-4361-9d9f-9b60a7e35232" name="Contains">
+              <con:configuration>
+                <token>${EmployeeId}</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="9449071e-6b2d-4d2d-b1f0-348f46f1f026" name="Contains 2">
+              <con:configuration>
+                <token>${EmployeeId2}</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="272cf3eb-0eae-4ed6-90ba-4bbb43e805a1" name="Contains 3">
+              <con:configuration>
+                <token>${EmployeeId3}</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="552e92fb-0aed-4223-b390-973ece20ac38" name="Contains 4">
+              <con:configuration>
+                <token>${EmployeeId4}</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/AddEmployeesToCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:setupScript>class Company {
+    def id
+}
+
+def idList = ["5f7d9db08b534700011ef02f", "5f7d9e71cce19d0001e866c0", "5f7d9e778b534700011ef035", "5f7d9e778b534700011ef035", "5f7d9e7fcce19d0001e866c1", "5f7d9e868b534700011ef036", "5f7d9e8ecce19d0001e866c2", "5f7d9e998b534700011ef037", "5f7d9ea6cce19d0001e866c3", "5f7d9eaecce19d0001e866c4", "5f7d9eb58b534700011ef039", "5f7d9ebdcce19d0001e866c5"]
+10.times {
+    Collections.shuffle idList
+    Company company = new Company (
+        id : idList.first()
+    )
+    context.CompanyId = company.id
+}
+
+class Employee {
+    def id
+}
+
+def idList2 = ["5f7d9dca8b534700011ef034", "5f7d9f02cce19d0001e866c6", "5f7d9f098b534700011ef03a", "5f7d9f10cce19d0001e866c7", "5f7d9f158b534700011ef03b", "5f7d9f1dcce19d0001e866c8", "5f7d9f258b534700011ef03c", "5f7d9f2dcce19d0001e866c9", "5f7d9f388b534700011ef03d", "5f7d9f41cce19d0001e866ca"]
+10.times {
+    Collections.shuffle idList2
+    Employee employee1 = new Employee (
+        id : idList2.first()
+    )
+   Collections.shuffle idList2
+    Employee employee2 = new Employee (
+        id : idList2.first()
+    )
+    Collections.shuffle idList2
+    Employee employee3 = new Employee (
+        id : idList2.first()
+    )
+    Collections.shuffle idList2
+    Employee employee4 = new Employee (
+        id : idList2.first()
+    )
+    context.Employee1Id = employee1.id
+    context.Employee2Id = employee2.id
+    context.Employee3Id = employee3.id
+    context.Employee4Id = employee3.id
+}</con:setupScript>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>41f55cba-e3ef-4184-acc3-5d7b09fff53d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="63d473df-7875-42be-903f-59b6da020041" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="GetCompany TestCase" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="0f31e6cf-34da-4a98-acef-2044e7334b70" name="GetCompany">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>GetCompany</con:operation>
+          <con:request name="GetCompany" id="ea20e113-fb26-43ee-954d-30df3364f5bb">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:GetCompanyRequest>
+         <sch:CompanyId>${CompanyId}</sch:CompanyId>
+      </sch:GetCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="05a992c0-c322-4bec-acba-66a9eb4d3b31" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="855e8900-9de3-46d3-92e6-4c068c95b874" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="8bf6fcf0-668d-48ab-aef3-e656d0759864" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:GetCompanyResponse[1]/ns2:Company[1]/ns2:Id[1]</path>
+                <content>${CompanyId}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/GetCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:setupScript>class Company {
+    def id
+}
+
+def idList = ["5f7d9db08b534700011ef02f", "5f7d9e71cce19d0001e866c0", "5f7d9e778b534700011ef035", "5f7d9e778b534700011ef035", "5f7d9e7fcce19d0001e866c1", "5f7d9e868b534700011ef036", "5f7d9e8ecce19d0001e866c2", "5f7d9e998b534700011ef037", "5f7d9ea6cce19d0001e866c3", "5f7d9eaecce19d0001e866c4", "5f7d9eb58b534700011ef039", "5f7d9ebdcce19d0001e866c5"]
+10.times {
+    Collections.shuffle idList
+    Company company = new Company (
+        id : idList.first()
+    )
+    context.CompanyId = company.id
+}</con:setupScript>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>b31e6422-e814-480c-8861-4174ce16ec24</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="b2ea3393-831a-4d98-82bd-2fef225e8e6a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="UpdateEmployee TestCase" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="d16078e9-b4f0-4df9-8c88-16cc72ec3c9f" name="UpdateEmployee">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>UpdateEmployee</con:operation>
+          <con:request name="UpdateEmployee" id="40c86fda-5332-4c71-be48-03d0d9478bef">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:UpdateEmployeeRequest>
+         <sch:Id>${EmployeeId}</sch:Id>
+         <sch:FirstName>${FirstName}</sch:FirstName>
+         <sch:LastName>${LastName}</sch:LastName>
+         <sch:MiddleName>${MiddleName}</sch:MiddleName>
+      </sch:UpdateEmployeeRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="Valid HTTP Status Codes" id="fc7f635e-dcb3-41b3-a535-0776d0a60654" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Response" id="9b8ad2b1-b914-44df-a982-beffceb5025f" name="SOAP Response"/>
+            <con:assertion type="XPath Match" id="589a99df-9acd-415c-bb90-ac0d5e42890d" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:UpdateEmployeeResponse[1]/ns2:Employee[1]/ns2:FirstName[1]</path>
+                <content>${FirstName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="b61848f9-62fa-401e-8be2-1de94c097fce" name="XPath Match 2">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:UpdateEmployeeResponse[1]/ns2:Employee[1]/ns2:LastName[1]</path>
+                <content>${LastName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="88d96e24-54b6-450c-a11e-2f1e383a1c3d" name="XPath Match 3">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:UpdateEmployeeResponse[1]/ns2:Employee[1]/ns2:MiddleName[1]</path>
+                <content>${MiddleName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/UpdateEmployeeRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:setupScript>import org.apache.commons.lang.RandomStringUtils 
+
+class Employee {
+    def id
+}
+def idList = ["5f7d9dca8b534700011ef034", "5f7d9f02cce19d0001e866c6", "5f7d9f098b534700011ef03a", "5f7d9f10cce19d0001e866c7", "5f7d9f158b534700011ef03b", "5f7d9f1dcce19d0001e866c8", "5f7d9f258b534700011ef03c", "5f7d9f2dcce19d0001e866c9", "5f7d9f388b534700011ef03d", "5f7d9f41cce19d0001e866ca"]
+10.times {
+    Collections.shuffle idList
+    Employee employee = new Employee (
+        id : idList.first()
+    )
+    context.EmployeeId = employee.id
+}
+charset = (('а'..'я') + ('А'..'Я') + ('0'..'9')).join()
+length = 9
+
+context.FirstName = RandomStringUtils.random(length, charset.toCharArray())
+context.MiddleName = RandomStringUtils.random(length, charset.toCharArray())
+context.LastName = RandomStringUtils.random(length, charset.toCharArray())</con:setupScript>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>f0ffd3e2-9820-445b-a77a-38e3c9b49f09</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="ac846715-65ce-451a-bb6c-6326ed79f6ca" name="SmokeFullCycleCompanyEmployeeTestSuite">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="e0db28b0-7cd5-4a69-9ca7-230a8e4b700b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="SmokeFullCycleTest" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="79fd3e29-ec15-4336-9fbb-4e006abd3441" name="AddCompany">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>AddCompany</con:operation>
+          <con:request name="AddCompany" id="d1e356eb-a9ae-4f29-9222-bab60bd29bda">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:AddCompanyRequest>
+         <sch:Name>Some Company</sch:Name>
+      </sch:AddCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="Valid HTTP Status Codes" id="8e7274f0-6bbc-4ead-b28e-335de787d448" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Response" id="8c098e5a-482b-4156-8fa1-9f67be819122" name="SOAP Response"/>
+            <con:assertion type="XPath Match" id="f8ad9321-cdde-426f-aeb7-8e4c7f624841" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddCompanyResponse[1]/ns2:Company[1]/ns2:Name[1]</path>
+                <content>Some Company</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/AddCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="request" id="81d521a0-c239-4dea-b025-7c72ad18487c" name="AddEmployee">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>AddEmployee</con:operation>
+          <con:request name="AddEmployee" id="dd110041-cde5-4c72-993c-9fb33e6e525f">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Body>
+      <sch:AddEmployeeRequest>
+         <sch:LastName>SomeLastName</sch:LastName>
+         <sch:FirstName>SomeFirstName</sch:FirstName>
+         <sch:MiddleName>SomeMiddleName</sch:MiddleName>
+      </sch:AddEmployeeRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="4edb2320-f0fe-4d00-860c-c04eb119da67" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="911ca8a3-8539-451e-9c63-dbfb6fb1b772" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="d342e713-5589-4ee2-bdbc-99ecd39c3ae5" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:FirstName[1]</path>
+                <content>SomeFirstName</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="37433be0-1d3f-4498-a8ad-f07cdfc879be" name="XPath Match 2">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:LastName[1]</path>
+                <content>SomeLastName</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="9d02e513-5cb2-4b83-816a-026c152343cb" name="XPath Match 3">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:MiddleName[1]</path>
+                <content>SomeMiddleName</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/AddEmployeeRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="PropertyTransfer 2" id="f2a69133-804d-4cc9-88a4-6ed724faca62">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeId</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>AddEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:Id[1]</con:sourcePath>
+            <con:targetType>EmployeeId</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:targetPath/>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>CompanyId</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>AddCompany</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddCompanyResponse[1]/ns2:Company[1]/ns2:Id[1]</con:sourcePath>
+            <con:targetType>CompanyId</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:targetPath/>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ns2:Name</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>AddCompany</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddCompanyResponse[1]/ns2:Company[1]/ns2:Name[1]</con:sourcePath>
+            <con:targetType>CompanyName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:targetPath/>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeFirstName</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>AddEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:FirstName[1]</con:sourcePath>
+            <con:targetType>EmployeeFirstName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:targetPath/>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeMiddleName</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>AddEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:MiddleName[1]</con:sourcePath>
+            <con:targetType>EmployeeMiddleName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeLastName</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>AddEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeeResponse[1]/ns2:Employee[1]/ns2:LastName[1]</con:sourcePath>
+            <con:targetType>EmployeeLastName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="properties" name="SomeTestCaseProperties" id="fa792b64-3ccf-4919-beb1-85b59bee1584">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>CompanyId</con:name>
+              <con:value>5f7ec8d58b534700011ef141</con:value>
+            </con:property>
+            <con:property>
+              <con:name>CompanyName</con:name>
+              <con:value>Some Company</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeId</con:name>
+              <con:value>5f7ec8d5cce19d0001e867d0</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeFirstName</con:name>
+              <con:value>SomeFirstName</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeMiddleName</con:name>
+              <con:value>SomeMiddleName</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeLastName</con:name>
+              <con:value>SomeLastName</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeNewFirstName</con:name>
+              <con:value>SomeFirstName</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeNewMiddleName</con:name>
+              <con:value>SomeNewMiddleName</con:value>
+            </con:property>
+            <con:property>
+              <con:name>EmployeeNewLastName</con:name>
+              <con:value>SomeNewLastName</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="request" id="695a7490-bdfb-41e7-a324-6998f6ae1506" name="AddEmployeesToCompany">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>AddEmployeesToCompany</con:operation>
+          <con:request name="AddEmployeesToCompany" id="c3f25b4b-349d-4f5a-9a62-63c3678b53cb">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:AddEmployeesToCompanyRequest>
+         <sch:CompanyId>${SomeTestCaseProperties#CompanyId}</sch:CompanyId>
+         <sch:EmployeeId>${SomeTestCaseProperties#EmployeeId}</sch:EmployeeId>
+      </sch:AddEmployeesToCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="b4c3a139-6d8d-4e88-8cbe-ad346accdb14" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="242b41c7-9a49-4b90-b615-e363f33f46ca" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="21d009f7-e66a-4905-b61a-2129ff2feb2a" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:AddEmployeesToCompanyResponse[1]/ns2:Company[1]/ns2:Id[1]</path>
+                <content>${SomeTestCaseProperties#CompanyId}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/AddEmployeesToCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="request" id="a91ba160-3575-468d-9dfc-110c4f55bb12" name="GetCompany">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>GetCompany</con:operation>
+          <con:request name="GetCompany" id="ea20e113-fb26-43ee-954d-30df3364f5bb">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:GetCompanyRequest>
+         <sch:CompanyId>${SomeTestCaseProperties#CompanyId}</sch:CompanyId>
+      </sch:GetCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="05a992c0-c322-4bec-acba-66a9eb4d3b31" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="855e8900-9de3-46d3-92e6-4c068c95b874" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="2f754150-cf29-4271-9abe-c5867c522af4" name="ContainsContains">
+              <con:configuration>
+                <token>Some Company</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="260cf108-fad5-4e89-ae55-9957b560786d" name="ContainsSomeFirstName">
+              <con:configuration>
+                <token>SomeFirstName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="260cf108-fad5-4e89-ae55-9957b560786d" name="ContainsSomeLastName">
+              <con:configuration>
+                <token>SomeLastName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="260cf108-fad5-4e89-ae55-9957b560786d" name="ContainsSomeMiddleName">
+              <con:configuration>
+                <token>SomeMiddleName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/GetCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="request" id="0a850448-ddd6-40ed-9ce7-5778d1036006" name="UpdateEmployee">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>UpdateEmployee</con:operation>
+          <con:request name="UpdateEmployee" id="40c86fda-5332-4c71-be48-03d0d9478bef">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:UpdateEmployeeRequest>
+         <sch:Id>${SomeTestCaseProperties#EmployeeId}</sch:Id>
+         <sch:FirstName>SomeNewFirstName</sch:FirstName>
+         <sch:LastName>SomeNewLastName</sch:LastName>
+         <sch:MiddleName>SomeNewMiddleName</sch:MiddleName>
+      </sch:UpdateEmployeeRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="Valid HTTP Status Codes" id="fc7f635e-dcb3-41b3-a535-0776d0a60654" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Response" id="9b8ad2b1-b914-44df-a982-beffceb5025f" name="SOAP Response"/>
+            <con:assertion type="XPath Match" id="d82bdf36-8403-4c12-a807-7d175628ea72" name="XPath Match">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="afe951a4-35ef-4d19-be94-6b45805428f3" name="ContainsSomeNewFirstName">
+              <con:configuration>
+                <token>SomeNewFirstName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="c231225a-a0f0-4633-98f9-42ed68f0dff3" name="ContainsSomeNewLastName">
+              <con:configuration>
+                <token>SomeNewLastName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="6b6d0f43-ef06-4821-95e4-ceae6143b4ce" name="ContainsSomeNewMiddleName">
+              <con:configuration>
+                <token>SomeNewMiddleName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/UpdateEmployeeRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="PropertyTransfer 3" id="d2eb025f-874c-4662-85d5-98c246d6ce7f">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeNewFirstName</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>UpdateEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:UpdateEmployeeResponse[1]/ns2:Employee[1]/ns2:FirstName[1]</con:sourcePath>
+            <con:targetType>EmployeeNewFirstName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeNewMiddleName</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>UpdateEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:UpdateEmployeeResponse[1]/ns2:Employee[1]/ns2:MiddleName[1]</con:sourcePath>
+            <con:targetType>EmployeeNewMiddleName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>EmployeeNewLastName</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>UpdateEmployee</con:sourceStep>
+            <con:sourcePath>declare namespace ns2='http://csssr.com/schemas';
+//ns2:UpdateEmployeeResponse[1]/ns2:Employee[1]/ns2:LastName[1]</con:sourcePath>
+            <con:targetType>EmployeeNewLastName</con:targetType>
+            <con:targetStep>SomeTestCaseProperties</con:targetStep>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="request" id="248c6f83-14bb-40b1-98f4-a0ac2e0cc6ca" name="GetCompany with updated Employee">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CompanyResourceBinding</con:interface>
+          <con:operation>GetCompany</con:operation>
+          <con:request name="GetCompany with updated Employee" id="ea20e113-fb26-43ee-954d-30df3364f5bb">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://soap.qa-test.csssr.com/ws/</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://csssr.com/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:GetCompanyRequest>
+         <sch:CompanyId>${SomeTestCaseProperties#CompanyId}</sch:CompanyId>
+      </sch:GetCompanyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="05a992c0-c322-4bec-acba-66a9eb4d3b31" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="855e8900-9de3-46d3-92e6-4c068c95b874" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="XPath Match" id="528420a0-5029-4fea-979f-ea4ef045a356" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace ns2='http://csssr.com/schemas';
+//ns2:GetCompanyResponse[1]/ns2:Company[1]/ns2:Name[1]</path>
+                <content>Some Company</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="669cd2b4-4c3c-4d53-9950-b4dac968d38b" name="ContainsSomeNewFirstName">
+              <con:configuration>
+                <token>SomeNewFirstName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="669cd2b4-4c3c-4d53-9950-b4dac968d38b" name="ContainsSomeNewLastName">
+              <con:configuration>
+                <token>SomeNewLastName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="669cd2b4-4c3c-4d53-9950-b4dac968d38b" name="SomeNewMiddleName">
+              <con:configuration>
+                <token>SomeNewMiddleName</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://csssr.com/definitions/CompanyResource/GetCompanyRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>67fa66da-7d64-4a8a-9cf1-703f6f1c044b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>e0739f1f-bfbb-4a77-b15a-602a809e27ec</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>19e46e9e-ba30-403e-9eda-5fe2ded5af30</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>fa792b64-3ccf-4919-beb1-85b59bee1584</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>f2a69133-804d-4cc9-88a4-6ed724faca62</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>0a850448-ddd6-40ed-9ce7-5778d1036006</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>d2eb025f-874c-4662-85d5-98c246d6ce7f</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+  <con:sensitiveInformation/>
+</con:soapui-project>
