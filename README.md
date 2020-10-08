@@ -4,6 +4,7 @@
 
 * Если имеется лиценизия на ready-api https://smartbear.com/product/ready-api/overview/ (возможно временную) то переходим в директорию ready-api и запускаем mvn test
 * Если лиценизии на ready-api нет то переходим в директорию soap-ui и запускаем mvn test
+
 По смыслу проекты (CSSSR-Test-project-1-readyapi-project.xml  и CSSSR-Test-project-1-soapui-project.xml) с тестами почти одинаковые, но на ready-api проверки и работа с данными сделана более удобно из-за более расширенных возможностей ready-api.
 
 Информация о статусе выполняемых тестов будет доступна в процессе запуска, а также target\surefire-reports\index.html. Например:
